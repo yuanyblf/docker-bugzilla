@@ -15,6 +15,7 @@ ENV BUGZILLA_URL http://localhost/bugzilla
 ENV GITHUB_BASE_GIT https://github.com/bugzilla/bugzilla
 ENV GITHUB_BASE_BRANCH 4.4
 ENV GITHUB_QA_GIT https://github.com/bugzilla/qa
+ENV GITHUB_CN_GIT https://github.com/repeat/bugzilla-tw
 
 ENV ADMIN_EMAIL admin@bugzilla.org
 ENV ADMIN_PASS password
