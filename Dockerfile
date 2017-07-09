@@ -15,7 +15,8 @@ ENV BUGZILLA_URL http://localhost/bugzilla
 ENV GITHUB_BASE_GIT https://github.com/bugzilla/bugzilla
 ENV GITHUB_BASE_BRANCH 4.4
 ENV GITHUB_QA_GIT https://github.com/bugzilla/qa
-ENV GITHUB_CN_GIT https://github.com/repeat/bugzilla-tw
+ENV GITHUB_CN_GIT https://github.com/yourcaptain/bugzilla-cn-4.4.6
+ENV BUGS_CN_HOME $BUGZILLA_ROOT/template/cn/
 
 ENV ADMIN_EMAIL admin@bugzilla.org
 ENV ADMIN_PASS password
@@ -49,7 +50,7 @@ RUN chown root.root /etc/sudoers && chmod 440 /etc/sudoers
 
 # Clone the code repo
 RUN su $BUGZILLA_USER -c "git clone $GITHUB_BASE_GIT -b $GITHUB_BASE_BRANCH $BUGZILLA_ROOT"
-RUN su $BUGZILLA_USER -c "git clone $GITHUB_CN_GIT $BUGZILLA_ROOT"
+RUN su $BUGZILLA_USER -c "git clone $GITHUB_CN_GIT $BUGS_CN_HOME"
 
 # Copy setup and test scripts
 COPY *.sh buildbot_step checksetup_answers.txt /
